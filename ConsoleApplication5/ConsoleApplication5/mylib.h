@@ -1,4 +1,4 @@
-#ifndef MYLIB_H
+#ifndef MYLIB_H //header file
 #define MYLIB_H
 
 #ifdef __cplusplus
