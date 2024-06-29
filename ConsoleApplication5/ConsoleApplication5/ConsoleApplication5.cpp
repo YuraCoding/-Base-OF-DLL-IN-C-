@@ -1,14 +1,13 @@
-#include "mylib.h"
+#include "mylib.h" // connect library(if needed)
 #include <windows.h>
 #include <fstream>
 #include <string>
 
 using namespace std;
 
-// Renamed from 'main' to avocid confusion
 void logMessage(const string& message) {
     ofstream logFile;
-    logFile.open("C:\\sigma.txt", ios::app); // Make sure the path is correct and writable
+    logFile.open("C:\\runningdll.log", ios::app); //Change Directory So You Can Log IT 
     logFile << message << endl;
     logFile.close();
 }
@@ -17,7 +16,7 @@ void MyFunction() {
     logMessage("MyFunction called!");
 
     // Execute command
-    int result = system("cmd.exe /k echo Hello World");
+    int result = system("cmd.exe /k echo Hello World"); //cmd popup with "Hello World" Text. If Needed change to anything you want or just delete all and write your code
     if (result != 0) {
         logMessage("Command execution failed!");
     }
@@ -25,7 +24,7 @@ void MyFunction() {
         logMessage("Command executed successfully!");
     }
 }
-
+// delete to here and change to your code.
 BOOL APIENTRY DllMain(HMODULE hModule,
     DWORD  ul_reason_for_call,
     LPVOID lpReserved) {
